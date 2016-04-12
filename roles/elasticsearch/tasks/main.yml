@@ -1,0 +1,10 @@
+---
+- name: Add elasticsearch apt repository
+  apt_repository: repo='deb http://packages.elasticsearch.org/elasticsearch/1.1/debian stable main' state=present
+
+- name: Install elasticsearch
+  apt: name=elasticsearch=1.1.1 update_cache=yes force=yes
+
+- name: Disable dynamic scripts
+  lineinfile: "dest=/etc/elasticsearch/elasticsearch.yml line='script.disable_dynamic: true'"
+
