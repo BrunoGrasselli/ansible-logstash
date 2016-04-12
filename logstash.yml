@@ -3,4 +3,5 @@
   roles:
     - { role: java, sudo: yes }
     - { role: elasticsearch, sudo: yes }
-    - kibana
+    - { role: kibana, sudo: yes }
+    - { role: nginx_kibana, sudo: yes }
