@@ -1,0 +1,8 @@
+---
+- stat: path={{ ansible_env.HOME}}/kibana-3.0.1
+  register: st
+
+- name: Download kibana
+  unarchive: src=https://download.elasticsearch.org/kibana/kibana/kibana-3.0.1.tar.gz dest={{ ansible_env.HOME}} copy=no
+  when: not st.stat.exists
+

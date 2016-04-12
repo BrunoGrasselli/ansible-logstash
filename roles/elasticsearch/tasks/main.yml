@@ -8,3 +8,9 @@
 - name: Disable dynamic scripts
   lineinfile: "dest=/etc/elasticsearch/elasticsearch.yml line='script.disable_dynamic: true'"
 
+- name: Restrict access
+  lineinfile: "dest=/etc/elasticsearch/elasticsearch.yml line='network.host: localhost'"
+
+- name: Start server
+  service: name=elasticsearch state=started
+
