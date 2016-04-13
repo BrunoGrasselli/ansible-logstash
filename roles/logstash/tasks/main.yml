@@ -14,3 +14,14 @@
 - name: Generate certificate
   shell: cd /etc/pki/tls; sudo openssl req -subj '/CN=logstash.brunograsselli.com/' -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt
 
+- name: Configure lumberjack input
+  template: src=./templates/01-lumberjack-input.conf dest=/etc/logstash/conf.d/01-lumberjack-input.conf
+
+- name: Configure syslog filter
+  template: src=./templates/10-syslog.conf dest=/etc/logstash/conf.d/10-syslog.conf
+
+- name: Configure lumberjack output
+  template: src=./templates/30-lumberjack-output.conf dest=/etc/logstash/conf.d/30-lumberjack-output.conf
+
+- name: Start logstash
+  service: name=logstash state=started
