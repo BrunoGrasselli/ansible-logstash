@@ -5,3 +5,4 @@
     - { role: elasticsearch, sudo: yes }
     - { role: kibana, sudo: yes }
     - { role: nginx_kibana, sudo: yes }
+    - { role: logstash, sudo: yes }

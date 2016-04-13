@@ -1,0 +1,6 @@
+---
+- name: Add logstash apt repository
+  apt_repository: repo='deb http://packages.elasticsearch.org/logstash/1.4/debian stable main' state=present
+
+- name: Install logstash
+  apt: name=logstash=1.4.2-1-2c0f5a1 update_cache=yes force=yes
