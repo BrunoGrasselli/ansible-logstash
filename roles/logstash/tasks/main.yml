@@ -4,3 +4,13 @@
 
 - name: Install logstash
   apt: name=logstash=1.4.2-1-2c0f5a1 update_cache=yes force=yes
+
+- name: Create cert directory
+  file: path=/etc/pki/tls/certs state=directory mode=0755
+
+- name: Create private directory
+  file: path=/etc/pki/tls/private state=directory mode=0755
+
+- name: Generate certificate
+  shell: cd /etc/pki/tls; sudo openssl req -subj '/CN=logstash.brunograsselli.com/' -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt
+
