@@ -23,3 +23,10 @@ Example of how to add the filebeat role to your app server's playbooks:
   roles:
      - filebeat
 ```
+
+## Versions
+* filebeat 1.2.1
+* java 1.7.0
+* kibana 4.5.0
+* logstash 2.3.1
+* nginx 1.4.6
