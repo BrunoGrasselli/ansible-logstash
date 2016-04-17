@@ -1,15 +1,6 @@
 ---
-- name: Add elasticsearch apt repository
-  apt_repository: repo='deb http://packages.elasticsearch.org/elasticsearch/1.1/debian stable main' state=present
-
 - name: Install elasticsearch
-  apt: name=elasticsearch=1.1.1 update_cache=yes force=yes
-
-- name: Disable dynamic scripts
-  lineinfile: "dest=/etc/elasticsearch/elasticsearch.yml line='script.disable_dynamic: true'"
-
-- name: Restrict access
-  lineinfile: "dest=/etc/elasticsearch/elasticsearch.yml line='network.host: localhost'"
+  apt: deb=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
 
 - name: Start server
   service: name=elasticsearch state=started

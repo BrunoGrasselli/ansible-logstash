@@ -1,14 +1,13 @@
 ---
-- stat: path=/var/www/kibana-3.0.1
+- stat: path=/var/www/kibana-4.5.0
   register: st
 
 - name: Create kibana directory
   file: path=/var/www/ state=directory mode=0755
 
-- name: Download kibana
-  unarchive: src=https://download.elasticsearch.org/kibana/kibana/kibana-3.0.1.tar.gz dest=/var/www/ copy=no
-  when: not st.stat.exists
+- name: Install kibana
+  apt: deb=https://download.elastic.co/kibana/kibana/kibana_4.5.0_amd64.deb
 
-- name: Change port
-  replace: dest=/var/www/kibana-3.0.1/config.js regexp='9200' replace='80'
+- name: Start kibana
+  service: name=kibana state=started
 
