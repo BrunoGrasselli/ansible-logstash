@@ -12,7 +12,7 @@ ansible-playbook -i logstash -u vagrant logstash.yml
 
 Example of how to add the filebeat role to your app server's playbooks:
 
-```
+```yaml
 - hosts: app-vagrant
   remote_user: vagrant
   become: yes
