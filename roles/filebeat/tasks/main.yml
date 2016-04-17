@@ -1,0 +1,6 @@
+---
+- name: Install filebeat
+  apt: deb=https://download.elastic.co/beats/filebeat/filebeat_1.2.1_amd64.deb
+
+- name: Configure filebeat
+  template: src=./templates/filebeat.yml dest=/etc/filebeat/filebeat.yml

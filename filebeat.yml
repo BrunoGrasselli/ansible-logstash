@@ -1,0 +1,4 @@
+- hosts: app
+  remote_user: vagrant
+  roles:
+    - { role: filebeat, sudo: yes }
