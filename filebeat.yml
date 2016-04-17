@@ -1,6 +1,8 @@
 - hosts: app-vagrant
   remote_user: vagrant
   become: yes
+  vars:
+    logs_path: "/home/vagrant/fakeapp/log/*.log"
   vars_files:
     - variables/logstash/vagrant
   roles:

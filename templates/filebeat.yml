@@ -3,7 +3,7 @@ filebeat:
     -
       document_type: json
       paths:
-        - "/home/vagrant/fakeapp/log/*.log"
+        - "{{ logs_path }}"
 output:
   logstash:
       hosts: ["{{ logs_host }}:5044"]
