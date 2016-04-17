@@ -8,4 +8,6 @@
 - name: Install java
   apt: name=oracle-java7-installer update_cache=yes
 
+- name: Install htop
+  apt: name=htop
 

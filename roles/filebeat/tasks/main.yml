@@ -4,3 +4,6 @@
 
 - name: Configure filebeat
   template: src=./templates/filebeat.yml dest=/etc/filebeat/filebeat.yml
+
+- name: Start filebeat
+  service: name=filebeat state=started
