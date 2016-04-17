@@ -9,7 +9,7 @@
   file: path=/etc/pki/tls/private state=directory mode=0755
 
 - name: Generate certificate
-  shell: cd /etc/pki/tls; sudo openssl req -subj '/CN=logstash.brunograsselli.com/' -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt
+  shell: cd /etc/pki/tls; sudo openssl req -subj '/CN={{ logs_host }}/' -x509 -days 3650 -batch -nodes -newkey rsa:2048 -keyout private/logstash-forwarder.key -out certs/logstash-forwarder.crt
 
 - name: Configure filebeat input
   template: src=./templates/filebeat-input.conf dest=/etc/logstash/conf.d/filebeat-input.conf

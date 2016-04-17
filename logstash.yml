@@ -1,5 +1,7 @@
-- hosts: logstash
+- hosts: logstash-vagrant
   remote_user: vagrant
+  vars_files:
+      - variables/logstash/vagrant
   roles:
     - { role: java, sudo: yes }
     - { role: elasticsearch, sudo: yes }

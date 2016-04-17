@@ -6,4 +6,4 @@ filebeat:
         - "/home/vagrant/fakeapp/log/*.log"
 output:
   logstash:
-      hosts: ["192.168.0.19:5044"]
+      hosts: ["{{ logs_host }}:5044"]

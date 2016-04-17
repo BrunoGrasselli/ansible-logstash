@@ -12,7 +12,7 @@
   action: apt pkg=python-passlib state=latest install_recommends=yes
 
 - name: Set user and password
-  htpasswd: path=/etc/nginx/conf.d/kibana.myhost.org.htpasswd name=admin password=123456
+  htpasswd: path=/etc/nginx/conf.d/{{ logs_host }}.htpasswd name={{ kibana_user }} password={{ kibana_password }}
 
 - name: Start server
   service: name=nginx state=started

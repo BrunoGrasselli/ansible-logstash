@@ -1,0 +1,3 @@
+logs_host: logs.brunograsselli.com
+kibana_user: admin
+kibana_password: 12345678
