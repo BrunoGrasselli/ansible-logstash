@@ -1,6 +1,7 @@
 filebeat:
   prospectors:
     -
+      document_type: json
       paths:
         - "/home/vagrant/fakeapp/log/*.log"
 output:
