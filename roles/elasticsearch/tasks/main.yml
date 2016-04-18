@@ -2,6 +2,9 @@
 - name: Install elasticsearch
   apt: deb=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
 
+- name: Configure elasticsearch
+  template: src=./templates/elasticsearch.yml dest=/etc/elasticsearch/elasticsearch.yml
+
 - name: Start server
   service: name=elasticsearch state=started
 
