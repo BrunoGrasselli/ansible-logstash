@@ -1,6 +1,6 @@
 ## ansible-logstash
 
-This repository contains an ansible playbook (`logstash.yml`) that installs Logstash to your server (together with Elasticsearch, Kibana and Nginx). It also contains a role that installs Filebeat to your app servers in order to forward the logs to logstash (`roles/filebeat`).
+This repository contains an ansible playbook (`logstash.yml`) that installs Logstash to a server (together with Elasticsearch, Kibana and Nginx). It also contains a role that installs Filebeat to app servers in order to forward the logs to logstash (`roles/filebeat`).
 
 ## Usage
 
